@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  font-size: 14px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+body,
+input,
+textarea,
+select {
+  color: #333;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}

@@ -1,0 +1,41 @@
+.login-wrapper{
+    float: right;
+    height: 45px;
+    margin: 19px 0 0 20px;
+    cursor: pointer;
+    padding: 0 22px 0 0;
+    background: url('../../../asserts/logo/topbar.png') right -47px no-repeat;
+    position: relative;
+}
+
+.login-wrapper span{
+    color:#787878;
+    display: block;
+    width: 28px;
+    margin-top: 7px;
+}
+
+.login-box{
+    position: absolute;
+    border:1px solid #000;
+    width: 158px;
+    top:38px;
+    left: -43px;
+    z-index:2000;
+    background: #242424;
+    border-radius: 4px;
+}
+
+.login-box ul{
+    list-style: none;
+}
+
+.login-box ul li{
+    text-align: left;
+    color: #ccc;
+    height: 38px;
+    font-size: 14px;
+    padding-left: 24px;
+    line-height: 39px;
+    border: 1px solid #232323;
+}

@@ -1,0 +1,16 @@
+.header-wrapper {
+  width: 1100px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.m-logo {
+  float: left;
+  width: 176px;
+  height: 69px;
+  background: url("../../../asserts/logo/topbar.png") 0 0 no-repeat;
+}
+
+.logo-a {
+   opacity: 0;
+}
