@@ -3,6 +3,10 @@
   font-size: 14px;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 * {
   padding: 0;
   margin: 0;
