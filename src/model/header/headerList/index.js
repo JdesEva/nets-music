@@ -1,17 +1,32 @@
 import React from "react";
 import "./index.css";
 
+import { BrowserRouter as Router, Link } from 'react-router-dom'
+
 class HeaderList extends React.Component {
   constructor() {
     super();
     this.state = {
-      navList: [
-        "发现音乐",
-        "我的音乐",
-        "朋友",
-        "商城",
-        "音乐达人",
-        "下载客户端"
+      navList: [{
+        path: '/found',
+        name: "发现音乐"
+      },
+      {
+        path: '/my',
+        name: '我的音乐'
+      }, {
+        path: '/friend',
+        name: '朋友'
+      }, {
+        path: '/mall',
+        name: '商城'
+      }, {
+        path: '/musician',
+        name: '音乐人'
+      }, {
+        path: '/download',
+        name: '下载客户端'
+      }
       ],
       index: 0
     };
@@ -26,30 +41,32 @@ class HeaderList extends React.Component {
 
   render() {
     return (
-      <ul className="m-nav">
-        {this.state.navList.map((name, index) => {
-          return (
-            <li
-              key={index}
-              onClick={() => {
-                this.tick(index);
-              }}
-            >
-              <span>
-                <a
-                  href="/#"
-                  className={this.state.index === index ? "acive-a" : ""}
-                >
-                  <em>{name}</em>
-                </a>
-              </span>
-            </li>
-          );
-        })}
-        <li>
+      <Router>
+        <ul className="m-nav">
+          {this.state.navList.map((row, index) => {
+            return (
+              <li
+                key={index}
+                onClick={() => {
+                  this.tick(index);
+                }}
+              >
+                <span>
+                  <Link
+                    to={row.path}
+                    className={this.state.index === index ? "acive-a" : ""}
+                  >
+                    <em>{row.name}</em>
+                  </Link>
+                </span>
+              </li>
+            );
+          })}
+          <li>
             <sup className="hot-dot"></sup>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </Router>
     );
   }
 }
