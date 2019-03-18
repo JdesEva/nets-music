@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { HashRouter as Router, Link } from "react-router-dom";
 
 class HeaderList extends React.Component {
   constructor() {
