@@ -1,6 +1,57 @@
 .wrapper-box{
     background: #C20C0C;
-    height: 35px;
     border: 1px solid #C20C0C;
     z-index: 90;
+}
+
+.content-wrapper{
+    height: 35px;
+}
+
+.no-wrapper{
+    height: 5px;
+}
+
+.tag-wrapper{
+    width:1100px;
+    margin:0 auto;
+    height: 34px;
+    font-size: 12px;
+}
+
+.tag-wrapper ul{
+    list-style: none;
+    float: left;
+    padding-left: 180px;
+}
+
+.tag-wrapper ul li{
+    float: left;
+    height: 34px;
+    line-height: 34px;
+}
+
+.tag-wrapper ul li a{
+    float: left;
+    height: 34px;
+    text-align: center;
+    text-decoration: none;
+    color:#fff;
+}
+
+.tag-wrapper ul li a em{
+    display: inline-block;
+    height: 20px;
+    padding: 0 13px;
+    margin: 7px 17px 0;
+    border-radius: 20px;
+    line-height: 21px;
+}
+
+.tag-wrapper ul li a em:hover{
+    background:#9B0909;
+}
+
+.is-active{
+    background:#9B0909;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css";
 
 import { HashRouter as Router, Link } from "react-router-dom";
+import {connect} from 'react-redux'
 
 class HeaderList extends React.Component {
   constructor() {
@@ -28,7 +29,8 @@ class HeaderList extends React.Component {
         name: '下载客户端'
       }
       ],
-      index: 0
+      index: 0,
+      path: ''
     };
   }
 
@@ -37,6 +39,7 @@ class HeaderList extends React.Component {
       index: index
     });
     console.log(this, index);
+    this.props.onRouterPath(this.state.navList[index].path)
   };
 
   render() {
@@ -57,6 +60,7 @@ class HeaderList extends React.Component {
                     className={this.state.index === index ? "acive-a" : ""}
                   >
                     <em>{row.name}</em>
+                    <sub style={{display: this.state.index === index ? 'block' : 'none'}} className="dott"></sub>
                   </Link>
                 </span>
               </li>
@@ -70,5 +74,22 @@ class HeaderList extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    path: state.path
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onRouterPath: (path) => {
+      dispatch({ type: 'ROUTER_ACTION', path: path })
+    }
+  }
+}
+
+HeaderList = connect(mapStateToProps, mapDispatchToProps)(HeaderList)
+
 
 export default HeaderList;

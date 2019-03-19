@@ -1,23 +1,80 @@
 import React from 'react'
 import './index.css'
+import store from '../../store/store.js'
 
-class HeaderWrapper extends React.Component{
+import { HashRouter as Router, Link } from "react-router-dom";
+
+class HeaderWrapper extends React.Component {
     constructor(props) {
-      super(props)
-    
-      this.state = {
-         
-      }
+        super(props)
+        this.state = {
+            href: window.location.href.split('/#')[1],
+            tagList: [{
+                path: '/discover',
+                name: '推荐'
+            }, {
+                path: '/toplist',
+                name: '排行榜'
+            }, {
+                path: '/playlist',
+                name: '歌单'
+            }, {
+                path: '/djradio',
+                name: '主播电台'
+            }, {
+                path: '/singer',
+                name: '歌手'
+            }, {
+                path: '/album',
+                name: '新碟上架'
+            }],
+            tagIndex: 0,
+        }
     }
 
-    render(){
+    componentDidMount() {
+        console.log(this.state)
+        this.renderHref()
+    }
+
+    renderHref = () => {
+        store.subscribe(() => {
+            this.setState({
+                href: store.getState().path
+            })
+        })
+    }
+
+    setTagIndex = (index) => {
+        this.setState({
+            tagIndex: index
+        })
+    }
+
+    render() {
         return (
-            <div className="wrapper-box">
-                123
-            </div>
+            <Router>
+                <div className={`wrapper-box ${(this.state.href === '/found' || this.state.href === '/') ? 'content-wrapper' : 'no-wrapper'}`}>
+                    <div className="tag-wrapper" style={{ display: (this.state.href === '/found' || this.state.href === '/') ? 'block' : 'none' }}>
+                        <ul>
+                            {
+                                this.state.tagList.map((row, index) => {
+                                    return (
+                                        <li key={index} onClick={this.setTagIndex.bind(this, index)}>
+                                            <Link to={`/found${row.path}`}>
+                                                <em className={this.state.tagIndex === index ? 'is-active' : ''}>{row.name}</em>
+                                            </Link>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </Router>
         )
     }
-    
+
 }
 
 export default HeaderWrapper

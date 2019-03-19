@@ -9,7 +9,6 @@
 
 .m-nav li *{
     float: left;
-    height: 70px;
 }
 
 .m-nav li a{
@@ -25,6 +24,7 @@
 }
 
 .acive-a{
+    position: relative;
     background: #000;
     color: #fff;
 }
@@ -35,4 +35,16 @@
     height: 19px;
     background: url('../../../asserts/logo/topbar.png') -190px 0 no-repeat;
     margin-top: 16px;
+}
+
+.dott{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 64px;
+    width: 12px;
+    height: 7px;
+    margin-left: -6px;
+    overflow: hidden;
+    background: url('../../../asserts/logo/topbar.png') -226px 0 no-repeat;
 }
