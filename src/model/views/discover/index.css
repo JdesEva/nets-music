@@ -1,0 +1,24 @@
+.discover{
+    height: 336px;
+}
+
+.discover-wrapper{
+    width: 982px;
+    margin: 0 auto;
+    border: 1px solid #202020;
+    height: 100%;
+}
+
+.img-wrapper img{
+    float: left;
+}
+
+.img-enter{
+    transition: opacity 1s ease-in 0s;
+    opacity: 0.2;
+}
+
+.img-leave{
+    transition: none 0s ease 0s;
+    opacity: 1;
+}

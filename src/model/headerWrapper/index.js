@@ -42,6 +42,11 @@ class HeaderWrapper extends React.Component {
             this.setState({
                 href: store.getState().path
             })
+            if(store.getState().path !== '/found'){
+                this.setState({
+                    tagIndex: 0
+                })
+            }
         })
     }
 
@@ -54,8 +59,8 @@ class HeaderWrapper extends React.Component {
     render() {
         return (
             <Router>
-                <div className={`wrapper-box ${(this.state.href === '/found' || this.state.href === '/') ? 'content-wrapper' : 'no-wrapper'}`}>
-                    <div className="tag-wrapper" style={{ display: (this.state.href === '/found' || this.state.href === '/') ? 'block' : 'none' }}>
+                <div className={`wrapper-box ${(this.state.href.indexOf('/found') > -1 || this.state.href === '/') ? 'content-wrapper' : 'no-wrapper'}`}>
+                    <div className="tag-wrapper" style={{ display: (this.state.href.indexOf('/found') > -1 || this.state.href === '/') ? 'block' : 'none' }}>
                         <ul>
                             {
                                 this.state.tagList.map((row, index) => {

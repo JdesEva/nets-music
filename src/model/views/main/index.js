@@ -3,7 +3,7 @@ import "./index.css";
 import { HashRouter as Router, Route } from "react-router-dom";
 import { connect } from 'react-redux'
 
-import FoundMusic from "../foundMusic";
+import Discover from "../discover";
 import My from "../my";
 
 class Main extends React.Component {
@@ -23,8 +23,8 @@ class Main extends React.Component {
       //路由列表
       <Router>
         <div>
-          <Route exact path="/" component={FoundMusic} />
-          <Route path="/found/discover" component={FoundMusic} />
+          <Route exact path="/" component={Discover} />
+          <Route path="/found/discover" component={Discover} />
           <Route path="/my" component={My} />
         </div>
       </Router>
