@@ -1,6 +1,8 @@
 import React from "react";
 import "./index.css";
 
+import SingList from './singList'
+
 class Discover extends React.Component {
   constructor(props) {
     super(props);
@@ -125,48 +127,51 @@ class Discover extends React.Component {
 
   render() {
     return (
-      <div className="discover" onClick={this.resetClass} style={{ backgroundImage: `url(${this.state.background[this.state.imgIndex]})` }} onMouseEnter={this.clearImgInterval} onMouseLeave={this._initImgInterval} >
-        {/* 图片预加载 */}
-        <div style={{ display: "none" }}>
-          {this.state.imgURL.map((url, index) => {
-            return <img key={index} alt={index} src={url} />;
-          })}
-        </div>
-        {
-          this.state.background.map((url, index) => {
-            return (
-              <div className="img-prev" key={index} style={{ backgroundImage: `url(${url})` }}></div>
-            )
-          })
-        }
+      <div>
+        <div className="discover" onClick={this.resetClass} style={{ backgroundImage: `url(${this.state.background[this.state.imgIndex]})` }} onMouseEnter={this.clearImgInterval} onMouseLeave={this._initImgInterval} >
+          {/* 图片预加载 */}
+          <div style={{ display: "none" }}>
+            {this.state.imgURL.map((url, index) => {
+              return <img key={index} alt={index} src={url} />;
+            })}
+          </div>
+          {
+            this.state.background.map((url, index) => {
+              return (
+                <div className="img-prev" key={index} style={{ backgroundImage: `url(${url})` }}></div>
+              )
+            })
+          }
 
-        <div className="discover-wrapper">
-          <div className="img-wrapper">
-            <img
-              alt="pic"
-              src={this.state.imgURL[this.state.imgIndex]}
-              width="730"
-              height="336"
-              className={this.state.className}
-            />
-            <div className="a-dot">
-              {this.state.imgURL.map((row, index) => {
-                return (
-                  <a onClick={this.tick.bind(this, index)} className={`target-a ${this.state.imgIndex === index ? 'target-a-isactive' : 'target-a-default'}`} href="/#" key={index} target-index={row}>&nbsp;</a>
-                )
-              })}
+          <div className="discover-wrapper">
+            <div className="img-wrapper">
+              <img
+                alt="pic"
+                src={this.state.imgURL[this.state.imgIndex]}
+                width="730"
+                height="336"
+                className={this.state.className}
+              />
+              <div className="a-dot">
+                {this.state.imgURL.map((row, index) => {
+                  return (
+                    <a onClick={this.tick.bind(this, index)} className={`target-a ${this.state.imgIndex === index ? 'target-a-isactive' : 'target-a-default'}`} href="/#" key={index} target-index={row}>&nbsp;</a>
+                  )
+                })}
+              </div>
             </div>
+
+            <span onClick={this.tickIndex.bind(this, -1)} className="arrow left-arrow">&nbsp;</span>
+            <span onClick={this.tickIndex.bind(this, 1)} className="arrow right-arrow">&nbsp;</span>
+
+            <div className="download-wrapper">
+              <a href="/downlaod">下载客户端</a>
+              <p className="downlaod-p">PC 安卓 iPhone WP iPad Mac 六大客户端</p>
+            </div>
+
           </div>
-
-          <span onClick={this.tickIndex.bind(this, -1)} className="arrow left-arrow">&nbsp;</span>
-          <span onClick={this.tickIndex.bind(this, 1)} className="arrow right-arrow">&nbsp;</span>
-
-          <div className="download-wrapper">
-            <a href="/downlaod">下载客户端</a>
-            <p className="downlaod-p">PC 安卓 iPhone WP iPad Mac 六大客户端</p>
-          </div>
-
         </div>
+        <SingList></SingList>
       </div>
     )
   }
