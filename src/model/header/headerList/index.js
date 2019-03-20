@@ -9,7 +9,7 @@ class HeaderList extends React.Component {
     super();
     this.state = {
       navList: [{
-        path: '/found',
+        path: '/found/discover',
         name: "发现音乐"
       },
       {

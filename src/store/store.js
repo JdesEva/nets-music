@@ -1,7 +1,11 @@
-import {createStore} from 'redux'
+import { createStore } from 'redux'
 
 import reducer from './reducer'
 
-const store = createStore(reducer)
+const initState = {
+    path: '/found'
+}
+
+const store = createStore(reducer, initState)
 
 export default store

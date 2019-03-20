@@ -15,7 +15,7 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this);
+
   }
 
   render() {

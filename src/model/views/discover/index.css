@@ -1,12 +1,19 @@
 .discover{
     height: 336px;
+    background-repeat: repeat-x;
+    user-select: none;
 }
 
 .discover-wrapper{
     width: 982px;
     margin: 0 auto;
-    border: 1px solid #202020;
     height: 100%;
+    position: relative;
+}
+
+.img-wrapper{
+    height: 100%;
+    position: relative;
 }
 
 .img-wrapper img{
@@ -21,4 +28,101 @@
 .img-leave{
     transition: none 0s ease 0s;
     opacity: 1;
+}
+
+.a-dot{
+    position: absolute;
+    top:310px;
+    left:0;
+    width: 730px;
+    height: 20px;
+    text-align: center;
+}
+
+.target-a{
+    text-decoration: none;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('../../../asserts/logo/banner.png') no-repeat;
+    background-position-y:-343px;
+}
+
+.target-a-default{
+    background-position-x:3px;
+}
+
+.target-a:hover{
+    background-position-x: -16px;
+}
+
+.target-a-isactive{
+    background-position-x: -16px;
+}
+
+.img-prev{
+    background-position: -9999px -9999px;
+}
+
+.arrow{
+    position: absolute;
+    display: block;
+    top:50%;
+    margin-top:-31px;
+    width:37px;
+    height: 63px;
+    background:url('../../../asserts/logo/banner.png') no-repeat;
+    cursor: pointer;
+    user-select: none;
+}
+
+.left-arrow:hover{
+    background-position: 0 -430px;
+}
+
+.right-arrow:hover{
+    background-position: 0 -578px;
+}
+
+.left-arrow{
+    left: -68px;
+    background-position: 0 -360px;
+}
+
+.right-arrow{
+    right: -68px;
+    background-position: 0 -508px;
+}
+
+.download-wrapper{
+    position: absolute;
+    top: 0;
+    z-index: 20;
+    right: -1px;
+    width: 254px;
+    height: 336px;
+    background: url('../../../asserts/logo/download.png') 0 0 no-repeat;
+}
+
+.downlaod-p{
+    margin: 10px auto;
+    text-align: center;
+    color: #8d8d8d;
+    font-size: 12px;
+    padding: 0;
+}
+
+.download-wrapper a{
+    color:#333;
+    display: block;
+    width: 215px;
+    height: 56px;
+    text-decoration: none;
+    margin:212px 0 0 19px;
+    text-indent: -9999px;
+    background:url('../../../asserts/logo/download.png') 0 9999px no-repeat;
+}
+
+.download-wrapper a:hover{
+    background-position: 0 -340px;
 }

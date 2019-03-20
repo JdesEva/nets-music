@@ -1,14 +1,15 @@
 import React from 'react'
 import './index.css'
-import store from '../../store/store.js'
 
 import { HashRouter as Router, Link } from "react-router-dom";
+
+import { connect } from 'react-redux'
 
 class HeaderWrapper extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            href: window.location.href.split('/#')[1],
+            path: '',
             tagList: [{
                 path: '/discover',
                 name: '推荐'
@@ -33,21 +34,7 @@ class HeaderWrapper extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.state)
-        this.renderHref()
-    }
-
-    renderHref = () => {
-        store.subscribe(() => {
-            this.setState({
-                href: store.getState().path
-            })
-            if(store.getState().path !== '/found'){
-                this.setState({
-                    tagIndex: 0
-                })
-            }
-        })
+        
     }
 
     setTagIndex = (index) => {
@@ -59,8 +46,8 @@ class HeaderWrapper extends React.Component {
     render() {
         return (
             <Router>
-                <div className={`wrapper-box ${(this.state.href.indexOf('/found') > -1 || this.state.href === '/') ? 'content-wrapper' : 'no-wrapper'}`}>
-                    <div className="tag-wrapper" style={{ display: (this.state.href.indexOf('/found') > -1 || this.state.href === '/') ? 'block' : 'none' }}>
+                <div className={`wrapper-box ${(this.props.path.indexOf('/found') > -1 || this.props.path === '/') ? 'content-wrapper' : 'no-wrapper'}`}>
+                    <div className="tag-wrapper" style={{ display: (this.props.path.indexOf('/found') > -1 || this.props.path === '/') ? 'block' : 'none' }}>
                         <ul>
                             {
                                 this.state.tagList.map((row, index) => {
@@ -79,7 +66,19 @@ class HeaderWrapper extends React.Component {
             </Router>
         )
     }
-
 }
+
+/**
+ * 
+ * @param {store} state 将redux下面的store映射给该组件
+ */
+
+const mapStateToProps = state => {
+    return {
+        path: state.path
+    }
+}
+
+HeaderWrapper = connect(mapStateToProps)(HeaderWrapper)
 
 export default HeaderWrapper
