@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './model/header'
-import HeaderWrapper from './model/headerWrapper'
-import Main from './model/views/main'
+
+import routes from './router'
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          <Header></Header>
-          <HeaderWrapper></HeaderWrapper>
-          <Main></Main>
+        <Router>
+          {
+            routes.map((route, index) => {
+              console.log(route)
+              return (
+                <Route exact={route.exact} path={route.path} key={index} component={route.component} render={
+                  props=>{
+                    
+                  }
+                }></Route>
+              )
+            })
+          }
+        </Router>
       </div>
     );
   }
