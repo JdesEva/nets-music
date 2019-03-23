@@ -1,0 +1,25 @@
+.m-top{
+    position: relative;
+    height: 70px;
+    z-index: 5000;
+    background: #242424;
+}
+
+.header-wrapper {
+    width: 1100px;
+    margin: 0 auto;
+    height: 100%;
+    background: #242424;
+  }
+  
+  .m-logo {
+    float: left;
+    width: 176px;
+    height: 69px;
+    background: url("../../asserts/logo/topbar.png") 0 0 no-repeat;
+  }
+  
+  .logo-a {
+     opacity: 0;
+  }
+  

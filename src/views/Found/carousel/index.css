@@ -41,6 +41,7 @@
 
 .target-a{
     text-decoration: none;
+    cursor: pointer;
     display: inline-block;
     width: 20px;
     height: 20px;

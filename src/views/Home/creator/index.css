@@ -1,0 +1,26 @@
+.creator-wrapper {
+  float: right;
+  border: 1px solid #4f4f4f;
+  border-radius: 32px;
+  cursor: pointer;
+  width: 90px;
+  height: 32px;
+  margin: 19px 0 0 12px;
+}
+
+.creator-wrapper span {
+  width: 90px;
+  height: 32px;
+  color: #ccc;
+  display: block;
+  line-height: 33px;
+  font-size: 12px;
+}
+
+.creator-wrapper:hover {
+  border-color: #fff;
+}
+
+.creator-wrapper span:hover {
+  color: #fff;
+}

@@ -1,0 +1,53 @@
+.m-nav{
+    list-style: none;
+}
+
+.m-nav li{
+    float: left;
+    height: 70px;
+}
+
+.m-nav li *{
+    float: left;
+}
+
+.m-nav li a{
+    padding: 0 19px;
+    height: 70px;
+    line-height: 70px;
+    color: #ccc;
+}
+
+.m-nav li a:hover{
+    background: #000;
+    color: #fff;
+}
+
+.acive-a{
+    position: relative;
+    background: #000;
+}
+
+.acive-a em{
+    color: #fff;
+}
+
+.hot-dot{
+    display: block;
+    width: 28px;
+    height: 19px;
+    background: url('../../../asserts/logo/topbar.png') -190px 0 no-repeat;
+    margin-top: 16px;
+}
+
+.dott{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 64px;
+    width: 12px;
+    height: 7px;
+    margin-left: -6px;
+    overflow: hidden;
+    background: url('../../../asserts/logo/topbar.png') -226px 0 no-repeat;
+}

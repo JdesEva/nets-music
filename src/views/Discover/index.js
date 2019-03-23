@@ -1,22 +1,26 @@
-import React from 'react'
+import React from "react";
+import "./index.css";
 
 
-class Header extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {
+class Discover extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      path: ""
+    };
+  }
 
-        }
-    }
+  componentDidMount() {
+    console.log(this.props);
+  }
 
-
-    render(){
-        return (
-            <div className="header">
-                44444444444444444444444
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div></div>
+    );
+  }
 }
 
-export default Header
+
+
+export default Discover;

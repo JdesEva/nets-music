@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-class HeaderControl extends React.Component {
+class Found extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -49,4 +49,4 @@ class HeaderControl extends React.Component {
   }
 }
 
-export default HeaderControl;
+export default Found;
