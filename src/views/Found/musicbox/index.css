@@ -1,0 +1,76 @@
+.musicbox{
+    width: 140px;
+    height: 204px;
+    margin-left: 42px;
+}
+
+.music-pic{
+    width: 140px;
+    height: 140px;
+    position: relative;
+}
+
+.music-pic img{
+    z-index: 40;
+}
+
+.music-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 27px;
+    color: #ccc;
+    background: url('../../../asserts/logo/coverall.png') 0 -537px no-repeat;
+}
+
+.bg-pic{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    background:url('../../../asserts/logo/coverall.png') no-repeat;
+}
+
+.desc{
+    margin: 8px 0 3px;
+    font-size: 14px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.desc a{
+    text-decoration: none;
+    color:#000;
+}
+
+.desc a:hover{
+    text-decoration:underline;
+}
+
+.play{
+    position: absolute;
+    display: inline-block;
+    right: 10px;
+    bottom: 5px;
+    width: 16px;
+    height: 17px;
+    background:url('../../../asserts/logo/iconall.png') 0 0 no-repeat;
+}
+
+.play-icon{
+    float: left;
+    width: 14px;
+    height: 11px;
+    margin: 9px 5px 9px 10px;
+    background: url('../../../asserts/logo/iconall.png') 0 -24px no-repeat;
+}
+
+.play-count{
+    float: left;
+    margin: 7px 0 0 0;
+}
+

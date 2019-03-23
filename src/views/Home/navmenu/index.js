@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 class Navmenu extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       navList: [
         {
@@ -40,7 +40,11 @@ class Navmenu extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this);
+    this._initPath();
+  }
+
+  componentWillReceiveProps() {
+    //props变化时候
     this._initPath();
   }
 
@@ -63,7 +67,9 @@ class Navmenu extends React.Component {
     this.setState({
       index: index
     });
-    this.props.onRouterPath(this.state.navList[index].path);
+    if (index > -1) {
+      this.props.onRouterPath(this.state.navList[index].path);
+    }
   };
 
   render() {

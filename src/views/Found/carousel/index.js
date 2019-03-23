@@ -1,5 +1,7 @@
 import React from "react";
 import "./index.css";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -95,8 +97,8 @@ class Carousel extends React.Component {
   /**
    * 向左向右
    */
-  tickIndex = (status,ev) => {
-    ev.preventDefault()
+  tickIndex = (status, ev) => {
+    ev.preventDefault();
     var index = this.state.imgIndex;
     if (status === -1) {
       index--;
@@ -119,6 +121,14 @@ class Carousel extends React.Component {
     this.setState({
       className: "img-leave"
     });
+  };
+
+  /**
+   * 跳转
+   */
+
+  renderLoad = () => {
+    this.props.onRouterPath("/download");
   };
 
   render() {
@@ -194,7 +204,7 @@ class Carousel extends React.Component {
             </span>
 
             <div className="download-wrapper">
-              <a href="/downlaod">下载客户端</a>
+              <Link onClick={this.renderLoad} to="/download">下载客户端</Link>
               <p className="downlaod-p">
                 PC 安卓 iPhone WP iPad Mac 六大客户端
               </p>
@@ -205,5 +215,24 @@ class Carousel extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    path: state.path
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onRouterPath: path => {
+      dispatch({ type: "ROUTER_ACTION", path: path });
+    }
+  };
+};
+
+Carousel = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Carousel);
 
 export default Carousel;

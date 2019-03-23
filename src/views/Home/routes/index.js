@@ -41,7 +41,7 @@ class Routes extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this,9)
+    this._initIndex()
   }
 
   setTagIndex = index => {
@@ -49,6 +49,16 @@ class Routes extends React.Component {
       tagIndex: index
     });
   };
+
+  _initIndex = ()=>{
+    var path = window.location.pathname
+    var index = this.state.tagList.findIndex(item=>{
+      return path.indexOf(item.path) > -1
+    })
+    this.setState({
+      tagIndex:index
+    })
+  }
 
   render() {
     return (

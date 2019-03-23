@@ -44,9 +44,8 @@ class Home extends React.Component {
               key={index}
               component={row.component}
               children={() => {
-                if (row.children) {
-                  return <Content route={row.children} />;
-                }
+                if (row.children) return <Content route={row.children} />;
+                return null
               }}
             />
           );

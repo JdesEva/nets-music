@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Carousel from './carousel'
+import Content from './content'
 
 class Found extends React.Component{
     constructor(props){
@@ -13,6 +15,8 @@ class Found extends React.Component{
         return (
             <div>
                 <Carousel></Carousel>
+                <Content></Content>
+
             </div>
         )
     }

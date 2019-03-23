@@ -1,0 +1,38 @@
+.v-h2 {
+  height: 33px;
+  padding: 0 10px 0 34px;
+  border-bottom: 2px solid #c10d0c;
+  background: url("../../../asserts/logo/index.png") -225px -156px no-repeat;
+}
+
+.v-h2 a {
+  float: left;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 28px;
+  color: #333;
+  text-decoration: none;
+}
+
+.more {
+  float: right;
+  margin-top: 9px;
+}
+
+.v-h2 .more a {
+  color: #666;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.v-h2 .more .logo{
+    background: url('../../../asserts/logo/index.png') 0 -240px no-repeat;
+}
+
+.cor{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    vertical-align: middle; 
+}

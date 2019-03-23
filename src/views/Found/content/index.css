@@ -1,0 +1,28 @@
+.content{
+    width: 980px;
+    margin:0 auto;
+    min-height: 700px;
+    border:1px solid #d3d3d3;
+    border-width: 0 1px;
+}
+
+.content-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.sing-warpper{
+    padding: 20px 20px 40px;
+    flex:1;
+}
+
+.box-wrapper{
+    margin:20px 0 0 -42px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.login-content{
+    width: 250px;
+}
