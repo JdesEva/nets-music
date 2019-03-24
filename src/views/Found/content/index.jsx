@@ -29,9 +29,14 @@ class Content extends React.Component {
             <Musicbox />
             <Musicbox />
           </div>
+          <div className="grap"></div>
+          <Vh2 route={this.state.route} />
         </div>
         <div className="login-content">
-            113423
+           <div className="login-form-control">
+              <p className="login-note">登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
+              <a href="/#" className="btn-default">用户登录</a>
+           </div>
         </div>
         </div>
       </div>
