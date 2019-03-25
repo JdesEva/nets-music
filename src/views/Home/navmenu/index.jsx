@@ -39,41 +39,17 @@ class Navmenu extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this._initPath();
-  }
 
-  componentWillReceiveProps() {
-    //props变化时候
-    this._initPath();
+  componentDidMount(){
+    console.log(this.props,1234565)
   }
 
   tick = index => {
     this.setState({
       index: index
     });
-    console.log(this, index);
-    this.props.onRouterPath(this.state.navList[index].path);
   };
 
-  _initPath = () => {
-    var path = window.location.pathname;
-    var index = this.state.navList.findIndex(item => {
-      return item.path === path;
-    });
-    if (path === '/') { //确保初次进入路由的正确
-      window.location.href = window.location.origin + '/discover/found'
-    }
-    if (path.indexOf("/discover") > -1) {
-      index = 0;
-    }
-    this.setState({
-      index: index
-    });
-    if (index > -1) {
-      this.props.onRouterPath(this.state.navList[index].path);
-    }
-  };
 
   render() {
     return (
@@ -84,6 +60,7 @@ class Navmenu extends React.Component {
               key={index}
               onClick={() => {
                 this.tick(index);
+                this.props.onRouterPath(row.path)
               }}
             >
               <span>
@@ -120,6 +97,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onRouterPath: path => {
+      console.log(10023,path)
       dispatch({ type: "ROUTER_ACTION", path: path });
     }
   };

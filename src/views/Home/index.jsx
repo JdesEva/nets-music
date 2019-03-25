@@ -19,7 +19,18 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
+    console.log(this.props)
+    this._initPath()
+  }
+
+  /**
+   * 保证进入首页时路由的正确
+   */
+  _initPath = ()=>{
+    var origin = window.location.origin
+    if(window.location.pathname === '/'){
+      window.location.href = origin + this.props.path
+    }
   }
 
   render() {
