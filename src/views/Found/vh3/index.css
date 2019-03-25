@@ -1,0 +1,25 @@
+.n-vh3{
+    position: relative;
+    *zoom: 1;
+    height: 23px;
+    margin: 0 20px;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+    font-size: 12px;
+}
+
+.n-vh3 span{
+    float: left;
+    font-weight: bold;
+}
+
+.n-vh3-more{
+    float: right;
+    font-weight: normal;
+    text-decoration: none;
+    color: #666;
+}
+
+.n-vh3-more:hover{
+    text-decoration: underline;
+}

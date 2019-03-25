@@ -15,7 +15,7 @@ class App extends Component {
           {
             routes.map((route, index) => {
               return (
-                <Route exact={route.exact} path={route.path} key={index} component={route.component} children={()=>{
+                <Route exact={route.exact} path={route.path} key={index} component={route.component} children={() => {
                   return <Home route={route.children}></Home>
                 }}></Route>
               )

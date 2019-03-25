@@ -65,7 +65,7 @@ class Routes extends React.Component {
       <div
         className={`wrapper-box ${
           this.props.path.indexOf("/found") > -1 || this.props.path === "/"
-            ? "content-wrapper"
+            ? "content-nav-wrapper"
             : "no-wrapper"
         }`}
       >

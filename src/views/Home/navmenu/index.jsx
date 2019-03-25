@@ -61,6 +61,9 @@ class Navmenu extends React.Component {
     var index = this.state.navList.findIndex(item => {
       return item.path === path;
     });
+    if (path === '/') { //确保初次进入路由的正确
+      window.location.href = window.location.origin + '/discover/found'
+    }
     if (path.indexOf("/discover") > -1) {
       index = 0;
     }

@@ -33,6 +33,7 @@
     position: relative;
     zoom: 1;
     height: 100%;
+    border-left: 1px solid #d3d3d3;
 }
 
 .login-form-control{
@@ -65,4 +66,31 @@
 
 .btn-default:hover{
     background-position: -110px -195px;
+}
+
+.n-singer{
+    margin-top: 15px;
+}
+
+.n-singer-list{
+    margin: 6px 0 14px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.apply-to-singer a{
+    width:210px;
+    height: 30px;
+    border-radius: 4px;
+    color:#666;
+    text-align: center;
+    line-height: 31px;
+    text-decoration: none;
+    border:1px solid #ccc;
+    display: inline-block;
+    background: url('../../../asserts/logo/button2.png') #fff 0 -59px no-repeat;
+}
+
+.apply-to-singer a:hover{
+    background-position:right -182px;
 }
