@@ -17,7 +17,7 @@ class Vh3 extends React.Component {
         return (
             <div className="n-vh3">
                 <span>{this.props.title.title}</span>
-                <a className="n-vh3-more" href="/#">查看全部 ></a>
+                <a style={{display: this.props.title.more ? 'block' : 'none'}} className="n-vh3-more" href="/#">查看全部 ></a>
             </div>
         )
     }

@@ -79,18 +79,29 @@
 }
 
 .apply-to-singer a{
+    padding: 0 5px 0 0;
     width:210px;
-    height: 30px;
+    height: 31px;
     border-radius: 4px;
     color:#666;
     text-align: center;
     line-height: 31px;
     text-decoration: none;
-    border:1px solid #ccc;
+    border-right: 1px solid #ccc;
     display: inline-block;
     background: url('../../../asserts/logo/button2.png') #fff 0 -59px no-repeat;
 }
 
 .apply-to-singer a:hover{
     background-position:right -182px;
+    border:1px solid #ccc;
+    height: 29px;
+}
+
+.zb-wrapper{
+    margin-top: 30px;
+}
+
+.zb-list{
+    margin: 20px 0 0 20px;
 }

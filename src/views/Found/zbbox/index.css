@@ -1,0 +1,51 @@
+.zb-box{
+    float: left;
+    width: 210px;
+    height: 50px;
+}
+
+.zb-box a{
+    float: left;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.zb-box a img{
+    box-shadow: 0 0 1px #333333 inset;
+    cursor: pointer;
+}
+
+.zb-box .info{
+    float: left;
+    width: 160px;
+    line-height: 21px;
+    text-align: left;
+}
+
+.zb-box .info a{
+    display: inline-block;
+    zoom: 1;
+    max-width: 88%;
+    width: auto;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+.zb-icon{
+    width: 11px;
+    height: 13px;
+    background-position: 0 1px;
+    font-size: 100%;
+    font-style: normal;
+    background: url('../../../asserts/logo/icon.png') 0 1px no-repeat;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-top: -1px;
+}
+
+.zb-box .info p{
+    margin-top: 0;
+    color: #666;
+    font-size: 12px;
+}
