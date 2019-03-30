@@ -1,0 +1,60 @@
+.album {
+  height: 100%;
+}
+
+.album > div {
+  position: relative;
+}
+
+.album img {
+  margin-left: -17px;
+}
+
+.album a {
+  display: block;
+  text-decoration: none;
+  width: 118px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: url("../../../asserts/logo/coverall.png") 0 -570px no-repeat;
+}
+
+.play-album {
+  left: 72px;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  display: inline-block;
+  opacity: 0;
+  cursor: pointer;
+  background: url("../../../asserts/logo/iconall.png") 0 -85px no-repeat;
+}
+
+.play-album-show {
+  transition: opactiy 0 ease-in;
+  opacity: 1;
+}
+
+.album-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  text-align: left;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.info-album {
+  color: #000;
+  width: 98%;
+}
+
+.album-singer {
+  color: #666;
+  width: 90%;
+}

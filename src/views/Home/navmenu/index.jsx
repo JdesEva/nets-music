@@ -39,9 +39,8 @@ class Navmenu extends React.Component {
     };
   }
 
-
-  componentDidMount(){
-    console.log(this.props,1234565)
+  componentDidMount() {
+    console.log(this.props, 1234565);
   }
 
   tick = index => {
@@ -49,7 +48,6 @@ class Navmenu extends React.Component {
       index: index
     });
   };
-
 
   render() {
     return (
@@ -60,7 +58,7 @@ class Navmenu extends React.Component {
               key={index}
               onClick={() => {
                 this.tick(index);
-                this.props.onRouterPath(row.path)
+                this.props.onRouterPath(row.path);
               }}
             >
               <span>
@@ -97,7 +95,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onRouterPath: path => {
-      console.log(10023,path)
+      console.log(10023, path);
       dispatch({ type: "ROUTER_ACTION", path: path });
     }
   };

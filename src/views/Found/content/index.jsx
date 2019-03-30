@@ -30,9 +30,14 @@ class Content extends React.Component {
               <Musicbox />
             </div>
             <div className="grap"></div>
-            <Vh2 route={{path: "discover/album",name: "新碟上架"}} />
+            <Vh2 route={{path: "/discover/album",name: "新碟上架"}} />
 
             <AlbumList></AlbumList>
+
+            <Vh2 route={{path: "/discover/toplist",name: "榜单"}} />
+
+            <AlbumList></AlbumList>
+
 
           </div>
           <div className="login-content">
