@@ -1,16 +1,28 @@
-import Home from '../views/Home'
-import Discover from '../views/Discover'
-import My from '../views/My'
-import Friend from '../views/Friend'
-import Mall from '../views/Mall'
-import Musician from '../views/Musician'
-import Download from '../views/Download'
-import Found from '../views/Found'
-import Toplist from '../views/Toplist'
-import Playlist from '../views/Playlist'
-import Djradio from '../views/Djradio'
-import Singer from '../views/Singer'
-import Album from '../views/Album'
+/**
+ * 路由配置规则
+ */
+
+import Loadable from 'react-loadable'
+
+import Loading from '../components/Loading'
+
+/**
+ * 按需加载路由文件
+ */
+
+const Home = Loadable({ loader: () => import('../views/Home'), loading: Loading })
+const Discover = Loadable({ loader: () => import('../views/Discover'), loading: Loading })
+const My = Loadable({ loader: () => import('../views/My'), loading: Loading })
+const Friend = Loadable({ loader: () => import('../views/Friend'), loading: Loading })
+const Mall = Loadable({ loader: () => import('../views/Mall'), loading: Loading })
+const Musician = Loadable({ loader: () => import('../views/Musician'), loading: Loading })
+const Download = Loadable({ loader: () => import('../views/Download'), loading: Loading })
+const Found = Loadable({ loader: () => import('../views/Found'), loading: Loading })
+const Toplist = Loadable({ loader: () => import('../views/Toplist'), loading: Loading })
+const Playlist = Loadable({ loader: () => import('../views/Playlist'), loading: Loading })
+const Djradio = Loadable({ loader: () => import('../views/Djradio'), loading: Loading })
+const Singer = Loadable({ loader: () => import('../views/Singer'), loading: Loading })
+const Album = Loadable({ loader: () => import('../views/Album'), loading: Loading })
 
 
 const routes = [{
@@ -21,23 +33,23 @@ const routes = [{
         path: '/discover',
         component: Discover,
         children: [{
-            path:'/discover/found',
-            component:Found
-        },{
-            path:'/discover/toplist',
+            path: '/discover/found',
+            component: Found
+        }, {
+            path: '/discover/toplist',
             comment: Toplist
-        },{
-            path:'/discover/playlist',
-            component:Playlist
-        },{
-            path:'/discover/djradio',
-            component:Djradio
-        },{
-            path:'/discover/singer',
-            component:Singer
-        },{
-            path:'/discover/album',
-            component:Album
+        }, {
+            path: '/discover/playlist',
+            component: Playlist
+        }, {
+            path: '/discover/djradio',
+            component: Djradio
+        }, {
+            path: '/discover/singer',
+            component: Singer
+        }, {
+            path: '/discover/album',
+            component: Album
         }]
     }, {
         path: '/my',

@@ -1,13 +1,14 @@
-const routerReducer = (state, action) => {
-    if (!state) return {
-        path: '/'
-    }
-    switch (action.type) {
-        case 'ROUTER_ACTION':
-            return { ...state, path: action.path }
-        default:
-            return state
-    }
-}
+/**
+ * 组合reducer
+ */
 
-export default routerReducer
+import * as routerPatch from './reducers/routerPatch'
+
+import { combineReducers } from 'redux'
+
+console.log(routerPatch)
+
+
+export default combineReducers({
+    ...routerPatch
+})

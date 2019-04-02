@@ -1,11 +1,13 @@
-import { createStore } from 'redux'
+/**
+ * 组装redux store
+ */
+
+import { createStore, applyMiddleware, } from 'redux'
+
+import __state from './__state'
 
 import reducer from './reducer'
 
-const initState = {
-    path: '/discover/found'
-}
+import logger from './middleware/logger'
 
-const store = createStore(reducer, initState)
-
-export default store
+export default createStore(reducer, __state, applyMiddleware(logger))
