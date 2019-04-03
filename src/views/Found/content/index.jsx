@@ -7,6 +7,7 @@ import Musicbox from "../musicbox";
 import Singerbox from '../singerbox'
 import Zbbox from '../zbbox'
 import AlbumList from '../albumList'
+import SingList from '../singList'
 
 class Content extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class Content extends React.Component {
 
             <Vh2 route={{path: "/discover/toplist",name: "榜单"}} />
 
-            <AlbumList></AlbumList>
+            <SingList></SingList>
 
 
           </div>

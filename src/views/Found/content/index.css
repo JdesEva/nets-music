@@ -4,6 +4,7 @@
     min-height: 700px;
     border:1px solid #d3d3d3;
     border-width: 0 1px;
+    background: #fff;
 }
 
 .content-wrapper{
@@ -32,7 +33,6 @@
     width: 250px;
     position: relative;
     zoom: 1;
-    height: 100%;
     border-left: 1px solid #d3d3d3;
 }
 
