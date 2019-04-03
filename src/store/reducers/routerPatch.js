@@ -15,7 +15,7 @@ export function path(state = '/', action) {
 export function todos(state = [], action) {
   switch (action.type) {
     case 'ADD_TODO':
-      return state.concat([action.text]);
+      return [...state,...[action.text]]
     default:
       return state;
   }

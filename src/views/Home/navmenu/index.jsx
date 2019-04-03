@@ -59,6 +59,7 @@ class Navmenu extends React.Component {
               onClick={() => {
                 this.tick(index);
                 this.props.onRouterPath(row.path);
+                this.props.updateTodo('1258888')
               }}
             >
               <span>
@@ -95,8 +96,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onRouterPath: path => {
-      console.log(10023, path);
       dispatch({ type: "ROUTER_ACTION", path: path });
+    },
+    updateTodo: todos => {
+      dispatch({ type: 'ADD_TODO', text: todos })
     }
   };
 };

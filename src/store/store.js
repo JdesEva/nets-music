@@ -2,7 +2,7 @@
  * 组装redux store
  */
 
-import { createStore, applyMiddleware, } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 
 import __state from './__state'
 

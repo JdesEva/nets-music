@@ -64,7 +64,7 @@ class Routes extends React.Component {
     return (
       <div
         className={`wrapper-box ${
-          this.props.path.indexOf("/found") > -1 || this.props.path === "/"
+          this.props.path.indexOf("/discover") > -1 || this.props.path === "/"
             ? "content-nav-wrapper"
             : "no-wrapper"
         }`}
@@ -73,7 +73,7 @@ class Routes extends React.Component {
           className="tag-wrapper"
           style={{
             display:
-              this.props.path.indexOf("/found") > -1 || this.props.path === "/"
+              this.props.path.indexOf("/discover") > -1 || this.props.path === "/"
                 ? "block"
                 : "none"
           }}
@@ -81,7 +81,10 @@ class Routes extends React.Component {
           <ul>
             {this.state.tagList.map((row, index) => {
               return (
-                <li key={index} onClick={this.setTagIndex.bind(this, index)}>
+                <li key={index} onClick={()=>{
+                  this.setTagIndex(index);
+                  this.props.onRouterPath(`/discover${row.path}`)
+                }}>
                   <Link to={`/discover${row.path}`}>
                     <em
                       className={
@@ -102,8 +105,7 @@ class Routes extends React.Component {
 }
 
 /**
- *
- * @param {store} state 将redux下面的store映射给该组件
+ * 映射state和dispatch
  */
 
 const mapStateToProps = state => {
@@ -112,6 +114,14 @@ const mapStateToProps = state => {
   };
 };
 
-Routes = connect(mapStateToProps)(Routes);
+const mapDispatchToProps = dispatch => {
+  return {
+    onRouterPath: path => {
+      dispatch({ type: "ROUTER_ACTION", path: path });
+    }
+  };
+};
+
+Routes = connect(mapStateToProps,mapDispatchToProps)(Routes);
 
 export default Routes;
