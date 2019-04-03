@@ -9,6 +9,7 @@ import Content from "./content";
 
 import { connect } from "react-redux";
 import { Route } from "react-router-dom";
+import PropType from 'prop-types'
 
 class Home extends React.Component {
   constructor(props) {
@@ -73,5 +74,9 @@ const mapStateToProps = state => {
 };
 
 Home = connect(mapStateToProps)(Home);
+
+Home.propType = {
+  path: PropType.string.isRequired
+}
 
 export default Home;

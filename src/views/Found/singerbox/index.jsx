@@ -1,6 +1,8 @@
 import React from 'react'
 import './index.css'
 
+import PropTypes from 'prop-types'
+
 class Singerbox extends React.Component {
     constructor(props) {
         super(props)
@@ -27,6 +29,10 @@ class Singerbox extends React.Component {
             </div>
         )
     }
+}
+
+Singerbox.propTypes = {
+    singer: PropTypes.object.isRequired
 }
 
 

@@ -6,18 +6,20 @@ import Loadable from 'react-loadable'
 
 import Loading from '../components/Loading'
 
+import asyncImport from '../components/asyncImport'
+
 /**
  * 按需加载路由文件
  */
 
-const Home = Loadable({ loader: () => import('../views/Home'), loading: Loading })
-const Discover = Loadable({ loader: () => import('../views/Discover'), loading: Loading })
+const Home = asyncImport(() => import(/* webpackChunkName: "Home" */ '../views/Home'))
+const Discover = asyncImport(() => import(/* webpackChunkName: "Home" */ '../views/Discover'))
 const My = Loadable({ loader: () => import('../views/My'), loading: Loading })
 const Friend = Loadable({ loader: () => import('../views/Friend'), loading: Loading })
 const Mall = Loadable({ loader: () => import('../views/Mall'), loading: Loading })
 const Musician = Loadable({ loader: () => import('../views/Musician'), loading: Loading })
 const Download = Loadable({ loader: () => import('../views/Download'), loading: Loading })
-const Found = Loadable({ loader: () => import('../views/Found'), loading: Loading })
+const Found = asyncImport(() => import(/* webpackChunkName: "Home" */ '../views/Found'))
 const Toplist = Loadable({ loader: () => import('../views/Toplist'), loading: Loading })
 const Playlist = Loadable({ loader: () => import('../views/Playlist'), loading: Loading })
 const Djradio = Loadable({ loader: () => import('../views/Djradio'), loading: Loading })

@@ -16,7 +16,6 @@ class Found extends React.Component{
             <div>
                 <Carousel></Carousel>
                 <Content></Content>
-
             </div>
         )
     }
