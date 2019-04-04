@@ -54,10 +54,7 @@ class Navmenu extends React.Component {
     var index = this.state.navList.findIndex(row => {
       return row.path.indexOf(this.props.path) > -1
     })
-
-    if (index > -1) {
-      this.tick(index)
-    }
+    this.tick(index)
   }
 
   render() {
@@ -115,9 +112,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-Navmenu = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Navmenu);
+Navmenu = connect(mapStateToProps, mapDispatchToProps)(Navmenu);
 
 export default Navmenu;
