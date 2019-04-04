@@ -40,8 +40,16 @@ class Routes extends React.Component {
     };
   }
 
+  componentDidMount(){
+    var index = this._initIndex()
+    this.setTagIndex(index)
+  }
+
   componentDidUpdate() {
-    this._initIndex()
+    var index = this._initIndex()
+    if(this.props.path === '/discover/found' && this.state.tagIndex !== 0){
+      this.setTagIndex(index)
+    }
   }
 
   setTagIndex = index => {
@@ -54,9 +62,7 @@ class Routes extends React.Component {
     var index = this.state.tagList.findIndex(row=>{
       return this.props.path.indexOf(row.path) > -1
     })
-    if(this.props.path === '/discover/found' && this.state.tagIndex !== 0){
-      this.setTagIndex(index)
-    }
+    return index
   }
 
   render() {
