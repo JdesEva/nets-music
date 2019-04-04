@@ -26,11 +26,11 @@ class Footer extends React.Component {
                             <li>|</li>
                             <li>意见反馈</li>
                         </ul>
-                        <p>
+                        <div className="info-p">
                             <p>网易公司版权所有©1997-2019</p>
                             <p>杭州乐读科技有限公司运营：</p>
                             <p>浙网文[2018]3506-263号</p>
-                        </p>
+                        </div>
                         <div className="jb-police">
                             <span>违法和不良信息举报电话：0571-89853516</span>
                             <span>举报邮箱：</span>

@@ -40,7 +40,7 @@ class Routes extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     this._initIndex()
   }
 
@@ -50,14 +50,13 @@ class Routes extends React.Component {
     });
   };
 
-  _initIndex = ()=>{
-    var path = window.location.pathname
-    var index = this.state.tagList.findIndex(item=>{
-      return path.indexOf(item.path) > -1
+  _initIndex = () => {
+    var index = this.state.tagList.findIndex(row=>{
+      return this.props.path.indexOf(row.path) > -1
     })
-    this.setState({
-      tagIndex:index
-    })
+    if(this.props.path === '/discover/found' && this.state.tagIndex !== 0){
+      this.setTagIndex(index)
+    }
   }
 
   render() {
@@ -67,7 +66,7 @@ class Routes extends React.Component {
           this.props.path.indexOf("/discover") > -1 || this.props.path === "/"
             ? "content-nav-wrapper"
             : "no-wrapper"
-        }`}
+          }`}
       >
         <div
           className="tag-wrapper"
@@ -81,7 +80,7 @@ class Routes extends React.Component {
           <ul>
             {this.state.tagList.map((row, index) => {
               return (
-                <li key={index} onClick={()=>{
+                <li key={index} onClick={() => {
                   this.setTagIndex(index);
                   this.props.onRouterPath(`/discover${row.path}`)
                 }}>
@@ -122,6 +121,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-Routes = connect(mapStateToProps,mapDispatchToProps)(Routes);
+Routes = connect(mapStateToProps, mapDispatchToProps)(Routes);
 
 export default Routes;

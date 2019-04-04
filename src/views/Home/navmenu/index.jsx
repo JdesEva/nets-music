@@ -40,7 +40,7 @@ class Navmenu extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props, 1234565);
+    this.cuurentIndex()
   }
 
   tick = index => {
@@ -48,6 +48,17 @@ class Navmenu extends React.Component {
       index: index
     });
   };
+
+
+  cuurentIndex = () => {
+    var index = this.state.navList.findIndex(row => {
+      return row.path.indexOf(this.props.path) > -1
+    })
+
+    if (index > -1) {
+      this.tick(index)
+    }
+  }
 
   render() {
     return (

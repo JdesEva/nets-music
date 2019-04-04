@@ -31,16 +31,15 @@
   padding: 0 10px 0 0;
 }
 
-.copy p {
+.copy .info-p {
   font-size: 12px;
   text-align: left;
   color: #666;
-  float: left;
-  padding-right: 10px;
+  display: flex;
 }
 
-.copy p:nth-child(2) {
-  padding-right: 0;
+.copy .info-p p:nth-child(1) {
+  padding-right: 10px;
 }
 
 .jb-police {

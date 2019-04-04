@@ -10,4 +10,6 @@ import reducer from './reducer'
 
 import logger from './middleware/logger'
 
-export default createStore(reducer, __state, applyMiddleware(logger))
+import persistent from './middleware/persistent'
+
+export default createStore(reducer, __state, applyMiddleware(logger, persistent))
