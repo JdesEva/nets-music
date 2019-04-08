@@ -40,15 +40,17 @@ class Routes extends React.Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     var index = this._initIndex()
-    this.setTagIndex(index)
+    if (index > -1) {
+      this.setTagIndex(index)
+    }
   }
 
-  componentDidUpdate() {
+  componentWillReceiveProps() {
     var index = this._initIndex()
-    if(this.props.path === '/discover/found' && this.state.tagIndex !== 0){
-      this.setTagIndex(index)
+    if (index === -1) {
+      this.setTagIndex(0)
     }
   }
 
