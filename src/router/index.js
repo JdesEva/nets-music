@@ -54,9 +54,9 @@ const routes = [{
         }, {
             path: '/discover/album',
             component: Album
-        },{
-            path:'*',
-            component:ErrorPage
+        }, {
+            path: '*',
+            component: ErrorPage
         }]
     }, {
         path: '/my',
@@ -73,9 +73,9 @@ const routes = [{
     }, {
         path: '/download',
         component: Download
-    },{
-        path:'*',
-        component:ErrorPage
+    }, {
+        path: '*',
+        component: ErrorPage
     }]
 }]
 
