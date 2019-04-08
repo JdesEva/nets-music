@@ -40,16 +40,14 @@ class Routes extends React.Component {
     };
   }
 
-  componentWillReceiveProps(){ //在接收到props 变化时确定不再当前首页，则把活动index 重置为 0
+  componentDidMount(){
     var index = this._initIndex()
-    if(index === -1){
-      this.setTagIndex(0)
-    }
+    this.setTagIndex(index)
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     var index = this._initIndex()
-    if(index > -1){
+    if(this.props.path === '/discover/found' && this.state.tagIndex !== 0){
       this.setTagIndex(index)
     }
   }
