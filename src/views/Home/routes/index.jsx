@@ -40,8 +40,18 @@ class Routes extends React.Component {
     };
   }
 
-  componentDidUpdate() {
-    this._initIndex()
+  componentWillReceiveProps(){ //在接收到props 变化时确定不再当前首页，则把活动index 重置为 0
+    var index = this._initIndex()
+    if(index === -1){
+      this.setTagIndex(0)
+    }
+  }
+
+  componentDidMount() {
+    var index = this._initIndex()
+    if(index > -1){
+      this.setTagIndex(index)
+    }
   }
 
   setTagIndex = index => {
@@ -51,12 +61,10 @@ class Routes extends React.Component {
   };
 
   _initIndex = () => {
-    var index = this.state.tagList.findIndex(row=>{
+    var index = this.state.tagList.findIndex(row => {
       return this.props.path.indexOf(row.path) > -1
     })
-    if(this.props.path === '/discover/found' && this.state.tagIndex !== 0){
-      this.setTagIndex(index)
-    }
+    return index
   }
 
   render() {

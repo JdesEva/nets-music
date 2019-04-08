@@ -31,7 +31,7 @@ class Home extends React.Component {
   _initPath = ()=>{
     var origin = window.location.origin
     if(window.location.pathname === '/'){
-      window.location.href = origin + this.props.path
+      window.location.href = origin + '/discover/found'
     }
   }
 

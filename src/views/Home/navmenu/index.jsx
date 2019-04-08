@@ -52,9 +52,16 @@ class Navmenu extends React.Component {
 
   cuurentIndex = () => {
     var index = this.state.navList.findIndex(row => {
-      return row.path.indexOf(this.props.path) > -1
+      return this.props.path.indexOf(row.path) > -1 || row.path.indexOf(window.location.pathname) > -1
     })
+    if (index === -1 && this.props.path.indexOf('discover') > -1) {
+      index = 0
+    }
     this.tick(index)
+    console.log('this.index', index, this.props)
+    if (index > -1 && window.location.pathname === '/discover/found') {
+      this.props.onRouterPath('/discover/found')
+    }
   }
 
   render() {
