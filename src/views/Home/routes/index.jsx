@@ -59,7 +59,7 @@ class Routes extends React.Component {
   };
 
   _initIndex = () => {
-    var index = this.state.tagList.findIndex(row=>{
+    var index = this.state.tagList.findIndex(row => {
       return this.props.path.indexOf(row.path) > -1
     })
     return index

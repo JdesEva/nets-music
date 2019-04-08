@@ -2,7 +2,6 @@ import React from 'react';
 
 import Carousel from './carousel'
 import Content from './content'
-import Footer from './footer'
 
 class Found extends React.Component{
     constructor(props){
@@ -17,7 +16,6 @@ class Found extends React.Component{
             <div>
                 <Carousel></Carousel>
                 <Content></Content>
-                <Footer></Footer>
             </div>
         )
     }

@@ -6,9 +6,10 @@ import Found from "./found";
 import Creator from "./creator";
 import Routes from "./routes";
 import Content from "./content";
+import Footer from './footer'
 
 import { connect } from "react-redux";
-import { Route } from "react-router-dom";
+import { Route,Switch } from "react-router-dom";
 import PropType from 'prop-types'
 
 class Home extends React.Component {
@@ -30,7 +31,7 @@ class Home extends React.Component {
   _initPath = ()=>{
     var origin = window.location.origin
     if(window.location.pathname === '/'){
-      window.location.href = origin + this.props.path
+      window.location.href = origin + '/discover/found'
     }
   }
 
@@ -49,6 +50,7 @@ class Home extends React.Component {
           <Found />
         </div>
         <Routes />
+        <Switch>
         {this.props.route.map((row, index) => {
           return (
             <Route
@@ -62,6 +64,8 @@ class Home extends React.Component {
             />
           );
         })}
+        </Switch>
+        <Footer></Footer>
       </div>
     );
   }

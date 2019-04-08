@@ -26,6 +26,7 @@ const Playlist = Loadable({ loader: () => import('../views/Playlist'), loading: 
 const Djradio = Loadable({ loader: () => import('../views/Djradio'), loading: Loading })
 const Singer = Loadable({ loader: () => import('../views/Singer'), loading: Loading })
 const Album = Loadable({ loader: () => import('../views/Album'), loading: Loading })
+const ErrorPage = Loadable({ loader: () => import('../views/Error'), loading: Loading })
 
 
 const routes = [{
@@ -53,6 +54,9 @@ const routes = [{
         }, {
             path: '/discover/album',
             component: Album
+        },{
+            path:'*',
+            component:ErrorPage
         }]
     }, {
         path: '/my',
@@ -69,6 +73,9 @@ const routes = [{
     }, {
         path: '/download',
         component: Download
+    },{
+        path:'*',
+        component:ErrorPage
     }]
 }]
 
