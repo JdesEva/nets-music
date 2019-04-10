@@ -1,6 +1,7 @@
-.sing-list{
-    height: 472px;
-    margin-top: 20px;
-    padding-left: 1px;
-    background: url('../../../asserts/logo/index_bill.png') 0 0 no-repeat;
+.sing-list {
+  height: 472px;
+  margin-top: 20px;
+  padding-left: 1px;
+  background: url("../../../asserts/logo/index_bill.png") 0 0 no-repeat;
+  display: flex;
 }

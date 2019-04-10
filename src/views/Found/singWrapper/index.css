@@ -1,0 +1,114 @@
+.sing-wrapper-list {
+  width: 230px;
+  border: none;
+  text-align: left;
+  user-select: none;
+}
+
+.top-list {
+  height: 100px;
+  padding: 20px 0 0 19px;
+  display: flex;
+}
+
+.top-list > div:nth-child(1) {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.top-a {
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../../../asserts/logo/coverall.png") -145px -57px no-repeat;
+}
+
+.title {
+  float: left;
+  width: 116px;
+  margin: 6px 0 0 10px;
+}
+
+.t-btn {
+  margin-top: 10px;
+}
+
+.t-btn a {
+  display: block;
+  float: left;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  text-indent: -9999px;
+  background: url("../../../asserts/logo/index.png") 0 0 no-repeat;
+}
+
+.t-btn a:nth-child(1) {
+  background-position: -267px -205px;
+}
+
+.t-btn a:nth-child(2) {
+  background-position: -300px -205px;
+}
+
+.t-btn a:nth-child(1):hover {
+  background-position: -267px -235px;
+}
+
+.t-btn a:nth-child(2):hover {
+  background-position: -300px -235px;
+}
+
+.sing-content ul {
+  height: 319px;
+  margin-left: 50px;
+  line-height: 32px;
+  list-style: none;
+}
+
+.sing-content ul li {
+  height: 32px;
+}
+
+.sing-content ul li span {
+  float: left;
+  position: relative;
+  width: 35px;
+  height: 32px;
+  margin-left: -35px;
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+}
+
+.sing-content ul li a {
+  float: left;
+  width: 170px;
+  height: 32px;
+  text-decoration: none;
+}
+
+.sing-content ul li a:hover {
+  text-decoration: underline;
+}
+
+.sing-content .is-top {
+  color: #c10d0c;
+}
+
+.look-all {
+  line-height: 32px;
+  text-align: right;
+  height: 32px;
+  margin-right: 32px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.look-all:hover {
+  text-decoration: underline;
+}
