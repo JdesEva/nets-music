@@ -7,9 +7,10 @@ import Creator from "./creator";
 import Routes from "./routes";
 import Content from "./content";
 import Footer from './footer'
+import Player from './player'
 
 import { connect } from "react-redux";
-import { Route,Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import PropType from 'prop-types'
 
 class Home extends React.Component {
@@ -28,9 +29,9 @@ class Home extends React.Component {
   /**
    * 保证进入首页时路由的正确
    */
-  _initPath = ()=>{
+  _initPath = () => {
     var origin = window.location.origin
-    if(window.location.pathname === '/'){
+    if (window.location.pathname === '/') {
       window.location.href = origin + '/discover/found'
     }
   }
@@ -51,21 +52,22 @@ class Home extends React.Component {
         </div>
         <Routes />
         <Switch>
-        {this.props.route.map((row, index) => {
-          return (
-            <Route
-              path={row.path}
-              key={index}
-              component={row.component}
-              children={() => {
-                if (row.children) return <Content route={row.children} />;
-                return null
-              }}
-            />
-          );
-        })}
+          {this.props.route.map((row, index) => {
+            return (
+              <Route
+                path={row.path}
+                key={index}
+                component={row.component}
+                children={() => {
+                  if (row.children) return <Content route={row.children} />;
+                  return null
+                }}
+              />
+            );
+          })}
         </Switch>
         <Footer></Footer>
+        <Player></Player>
       </div>
     );
   }

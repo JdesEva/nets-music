@@ -26,5 +26,6 @@ function mapSessionToState(key, __initVal, type = 'string') {
 }
 
 export default {
-    path: mapSessionToState('path', '/discover/found') //必须输入,防止重复定向
+    path: mapSessionToState('path', '/discover/found'), //必须输入,防止重复定向
+    lock: mapSessionToState('lock',false,'boolean')
 }

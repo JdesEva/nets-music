@@ -1,0 +1,83 @@
+.player {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.hover-player {
+  height: 20px;
+  cursor: pointer;
+}
+
+.all-player {
+  position: fixed;
+  bottom: -47px;
+  width: 100%;
+}
+
+.show-player {
+  transition: bottom ease-in 0.1s;
+  bottom: 0;
+}
+
+.hide-player {
+  transition: bottom ease-in-out 0.3s;
+  bottom: -47px;
+}
+
+.player-content {
+  position: relative;
+  height: 53px;
+  margin-right: 67px;
+  background: url("../../../asserts/logo/playbar.png") 0 0 repeat-x;
+}
+
+.player-content-right {
+  position: relative;
+}
+
+[class^="area"] {
+  background: url("../../../asserts/logo/playbar.png") 0 0 no-repeat;
+}
+
+.area1 {
+  position: absolute;
+  top: -14px;
+  right: 15px;
+  width: 52px;
+  height: 67px;
+  background-position: 0 -380px;
+}
+
+.area1 a {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 6px 0 0 17px;
+  background: url("../../../asserts/logo/playbar.png") -100px -380px no-repeat;
+}
+
+.area1 a:hover {
+  background-position: -100px -400px;
+}
+
+.area2 {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 15px;
+  height: 54px;
+  background-position: -52px -393px;
+  pointer-events: none;
+}
+
+.player-control {
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  z-index: 15;
+  width: 980px;
+  height: 47px;
+  margin: 0 auto;
+  color: #fff;
+}

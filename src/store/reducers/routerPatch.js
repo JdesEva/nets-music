@@ -3,9 +3,13 @@
  * 
  */
 
+import ACTIONTYPE from '../action.types'
+
+console.log(ACTIONTYPE)
+
 export function path(state = '/', action) {
   switch (action.type) {
-    case 'ROUTER_ACTION':
+    case ACTIONTYPE.updateRouter:
       return action.path
     default:
       return state
